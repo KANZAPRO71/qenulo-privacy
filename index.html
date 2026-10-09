@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kebijakan Privasi Qenulo AI / Privacy Policy</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 18px 64px; line-height: 1.6; color: #1d1b2e; }
+  h1 { font-size: 1.6rem; margin-bottom: 0; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+  .meta { color: #555; font-size: .95rem; }
+  .todo { background: #fff3cd; padding: 0 4px; }
+  nav a { margin-right: 12px; }
+  hr { margin: 3rem 0; }
+</style>
+</head>
+<body>
+<h1>Kebijakan Privasi Qenulo AI</h1>
+<p class="meta">Aplikasi: <strong>Qenulo AI</strong> (Android, ID paket <code>ai.qenulo.study</code>)<br>
+Pengembang: <strong>Devi Core</strong><br>
+Tanggal berlaku: <strong>10 Oktober 2026</strong></p>
+<nav><a href="#id">Bahasa Indonesia</a><a href="#en">English</a></nav>
+
+<section id="id">
+<h2>1. Ringkasan</h2>
+<p>Qenulo AI adalah aplikasi belajar yang membantu siswa memahami soal (foto, PDF, ketik, atau suara) dengan bantuan model AI Google Gemini. Qenulo <strong>tidak memiliki akun pengguna dan tidak memiliki server sendiri</strong> yang menyimpan data Anda. Data belajar Anda disimpan di perangkat Anda sendiri.</p>
+
+<h2>2. Kunci API Gemini milik Anda (BYOK)</h2>
+<p>Qenulo memakai model "bawa kunci sendiri" (<em>Bring Your Own Key</em>): Anda memasukkan kunci API Google Gemini milik Anda sendiri di Pengaturan. Kunci tersebut disimpan <strong>hanya di perangkat</strong>, di penyimpanan aman sistem (Android Keystore melalui <code>expo-secure-store</code>), dan hanya dikirim ke Google sebagai bagian dari permintaan ke Gemini API. Kunci tidak pernah dikirim ke pengembang.</p>
+<p>Build uji (misalnya untuk pengujian internal/tertutup) dapat berisi kunci uji milik pengembang agar penguji bisa langsung mencoba aplikasi. Dalam hal itu, permintaan Anda diproses oleh Gemini API dengan kunci pengembang, tetapi isi permintaan tetap tidak dikirim ke server pengembang.</p>
+
+<h2>3. Data yang dikirim ke Google Gemini API</h2>
+<p>Agar fitur AI berfungsi, konten berikut dikirim langsung dari perangkat Anda ke Google Gemini API (<code>generativelanguage.googleapis.com</code>) saat Anda memakai fitur terkait:</p>
+<ul>
+  <li><strong>Foto</strong> soal yang Anda ambil dengan kamera atau pilih dari galeri;</li>
+  <li><strong>File PDF / dokumen</strong> yang Anda unggah;</li>
+  <li><strong>Teks soal</strong> yang Anda ketik dan pertanyaan di chat tutor;</li>
+  <li><strong>Audio suara</strong> dari mikrofon selama sesi Tutor Suara (dialirkan langsung ke Gemini Live), beserta transkripnya.</li>
+</ul>
+<p>Pemrosesan oleh Google tunduk pada <a href="https://ai.google.dev/gemini-api/terms">Ketentuan Layanan Gemini API</a> dan <a href="https://policies.google.com/privacy">Kebijakan Privasi Google</a>. Jika Anda memakai kunci API pada tingkat gratis, Google dapat menggunakan konten untuk meningkatkan produknya sesuai ketentuan tersebut. Mohon jangan mengirim informasi pribadi yang sensitif dalam foto, dokumen, atau suara.</p>
+
+<h2>4. Data yang disimpan di perangkat</h2>
+<p>Riwayat soal, hasil penyelesaian, kemajuan belajar, kartu belajar (flashcard), lencana, dan pengaturan (bahasa, jenjang, mode belajar, tema) disimpan secara lokal di perangkat Anda. Pengingat belajar memakai <strong>notifikasi lokal</strong> yang dijadwalkan di perangkat; tidak ada notifikasi push dari server.</p>
+<p>Fitur cadangan (backup) hanya membuat file ekspor ketika Anda memintanya, dan file itu dikirim ke tujuan yang Anda pilih sendiri (misalnya aplikasi berbagi). Fitur "Bagikan" hanya membagikan teks yang Anda pilih untuk dibagikan.</p>
+
+<h2>5. Yang tidak kami lakukan</h2>
+<ul>
+  <li>Tidak ada akun Qenulo, login, atau server Qenulo yang menyimpan data Anda.</li>
+  <li>Tidak ada SDK analitik, pelacakan, atau pelaporan crash pihak ketiga (misalnya Firebase, Sentry) di aplikasi.</li>
+  <li>Tidak ada iklan.</li>
+  <li>Kami tidak menjual atau menyewakan data Anda kepada siapa pun.</li>
+</ul>
+
+<h2>6. Izin aplikasi</h2>
+<ul>
+  <li><strong>Kamera</strong>: hanya untuk memotret soal ketika Anda membuka fitur Foto Soal.</li>
+  <li><strong>Mikrofon</strong> (dan pengaturan audio): hanya selama Anda memakai Tutor Suara.</li>
+  <li><strong>Notifikasi</strong>: untuk pengingat belajar lokal, jika Anda mengizinkannya.</li>
+</ul>
+<p>Izin dapat dicabut kapan saja melalui Pengaturan Android; fitur terkait lalu tidak dapat digunakan.</p>
+
+<h2>7. Anak-anak dan pelajar</h2>
+<p>Qenulo adalah aplikasi pendidikan untuk pelajar. Pengguna di bawah 13 tahun sebaiknya memakai aplikasi dengan bimbingan dan izin orang tua/wali, termasuk dalam pembuatan dan penggunaan kunci API Google. Qenulo tidak meminta nama, email, atau data identitas lain, dan tidak secara sengaja mengumpulkan data pribadi anak.</p>
+
+<h2>8. Menghapus data</h2>
+<ul>
+  <li><strong>Hapus kunci API</strong>: buka Pengaturan &rarr; bagian kunci API Gemini &rarr; hapus/kosongkan kunci. Anda juga dapat mencabut kunci di <a href="https://aistudio.google.com/apikey">Google AI Studio</a>.</li>
+  <li><strong>Hapus riwayat</strong>: gunakan tombol hapus riwayat di aplikasi.</li>
+  <li><strong>Hapus semua data</strong>: Pengaturan Android &rarr; Aplikasi &rarr; Qenulo AI &rarr; Penyimpanan &rarr; Hapus data, atau copot pemasangan aplikasi.</li>
+</ul>
+<p>Karena pengembang tidak menyimpan data Anda di server, tidak ada data di sisi pengembang yang perlu dihapus. Data yang telah diproses Google tunduk pada kebijakan Google.</p>
+
+<h2>9. Perubahan kebijakan</h2>
+<p>Kebijakan ini dapat diperbarui. Versi terbaru selalu tersedia di halaman ini dengan tanggal berlaku yang diperbarui.</p>
+
+<h2>10. Kontak</h2>
+<p>Email: <span class="todo">[EMAIL KONTAK PENGEMBANG - BELUM DIISI]</span><br>
+Sementara itu, Anda dapat menghubungi kami melalui <a href="https://github.com/KANZAPRO71/qenulo-privacy/issues">GitHub Issues</a>.</p>
+</section>
+
+<hr>
+
+<section id="en" lang="en">
+<h1>Qenulo AI Privacy Policy</h1>
+<p class="meta">App: <strong>Qenulo AI</strong> (Android, package <code>ai.qenulo.study</code>)<br>
+Developer: <strong>Devi Core</strong><br>
+Effective date: <strong>10 October 2026</strong></p>
+
+<h2>1. Summary</h2>
+<p>Qenulo AI is a study app that helps students understand problems (photo, PDF, typed or voice) using Google's Gemini AI models. Qenulo has <strong>no user accounts and no servers of its own</strong> that store your data. Your learning data stays on your device.</p>
+
+<h2>2. Your own Gemini API key (BYOK)</h2>
+<p>You enter your own Google Gemini API key in Settings. It is stored <strong>only on your device</strong> in the system's secure storage (Android Keystore via <code>expo-secure-store</code>) and is only sent to Google as part of Gemini API requests. It is never sent to the developer. Test builds (e.g. internal/closed testing) may include a developer test key so testers can use the app right away; requests are then made to the Gemini API with that key, and their content is still not sent to any developer server.</p>
+
+<h2>3. Data sent to the Google Gemini API</h2>
+<p>When you use the related features, the following is sent directly from your device to the Google Gemini API (<code>generativelanguage.googleapis.com</code>): photos of problems you take or pick; PDF/documents you upload; typed questions and tutor chat messages; and microphone audio during Voice Tutor sessions (streamed to Gemini Live) together with its transcription. Google's processing is governed by the <a href="https://ai.google.dev/gemini-api/terms">Gemini API Terms of Service</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. On the free tier, Google may use content to improve its products under those terms. Please avoid sending sensitive personal information.</p>
+
+<h2>4. Data stored on your device</h2>
+<p>Solve history, results, learning progress, flashcards, badges and settings are stored locally on your device. Study reminders are <strong>local notifications</strong> scheduled on the device; there are no server push notifications. Backups are only created when you export them, and go to a destination you choose. "Share" only shares the text you choose to share.</p>
+
+<h2>5. What we do not do</h2>
+<ul>
+  <li>No Qenulo accounts, logins or Qenulo servers storing your data.</li>
+  <li>No third-party analytics, tracking or crash-reporting SDKs (e.g. Firebase, Sentry).</li>
+  <li>No ads.</li>
+  <li>We do not sell or rent your data.</li>
+</ul>
+
+<h2>6. Permissions</h2>
+<p><strong>Camera</strong>: only to photograph a problem when you use Photo Solve. <strong>Microphone</strong> (and audio settings): only while you use the Voice Tutor. <strong>Notifications</strong>: for local study reminders if you allow them. You can revoke permissions at any time in Android Settings.</p>
+
+<h2>7. Children and students</h2>
+<p>Qenulo is an educational app for students. Users under 13 should use it with the guidance and consent of a parent or guardian, including when creating and using a Google API key. Qenulo does not ask for names, emails or other identifying information and does not knowingly collect children's personal data.</p>
+
+<h2>8. Deleting your data</h2>
+<p>Remove the API key in Settings (Gemini API key section), and/or revoke it in <a href="https://aistudio.google.com/apikey">Google AI Studio</a>. Clear history with the in-app clear button. Remove everything via Android Settings &rarr; Apps &rarr; Qenulo AI &rarr; Storage &rarr; Clear data, or by uninstalling the app. The developer holds no copy of your data on any server. Data processed by Google is subject to Google's policies.</p>
+
+<h2>9. Changes</h2>
+<p>This policy may be updated; the latest version is always on this page with an updated effective date.</p>
+
+<h2>10. Contact</h2>
+<p>Email: <span class="todo">[DEVELOPER CONTACT EMAIL - NOT SET YET]</span><br>
+Meanwhile you can reach us via <a href="https://github.com/KANZAPRO71/qenulo-privacy/issues">GitHub Issues</a>.</p>
+</section>
+</body>
+</html>
